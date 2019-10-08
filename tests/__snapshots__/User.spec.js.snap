@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User.js Should match user description 1`] = `"This is a short description of the user: John Whick"`;
