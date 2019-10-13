@@ -3,7 +3,23 @@ import Model from '../classes/Model';
 describe('Model.js', () => {
   let actors;
   beforeEach(() => {
-    actors = ['Forest Gump', 'Forest Whitaker'];
+    actors = [
+      {
+        id: 234,
+        name: 'Forest Whitaker',
+        oscars: 1
+      },
+      {
+        id: 567,
+        name: 'Tom Hanks',
+        oscars: 1
+      },
+      {
+        id: 745,
+        name: 'Denzel Washington',
+        oscars: 2
+      }
+    ]
   });
   test('Should create instance', () => {
     expect(new Model()).toBeInstanceOf(Model);

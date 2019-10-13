@@ -1,6 +1,6 @@
 export default class Model {
   constructor(data = []) {
-    this.$collection = this.record(data);
+    this.$collection = data;
   }
 
   record(item) {
@@ -9,20 +9,22 @@ export default class Model {
   }
 
   getAll() {
-    return this.$collection.map(item => this.bufferCopy(item));
+    return this.$collection.map(item => JSON.parse(JSON.stringify(item)));
   }
 
   find(id) {
     let found = this.$collection.find(record => record.id === id);
-    return found ? this.bufferCopy(found) : null;
+    return found ? JSON.parse(JSON.stringify(found)) : null;
   }
 
   update(id, newValue) {
-    return this.find(id).value = newValue;
+    let index = this.$collection.findIndex(item => item.id === id);
+    this.$collection[index].value = newValue;
   }
 
-  bufferCopy(item) {
-    return JSON.parse(JSON.stringify(item))
+  delete(id) {
+    let index = this.$collection.findIndex(item => item.id === id);
+    this.$collection.slice(0,index);
   }
 
 }
