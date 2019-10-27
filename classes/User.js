@@ -1,8 +1,7 @@
 export default class User {
   constructor(details) {
-    let { firstname, lastname } = details;
-    this.firstname = firstname;
-    this.lastname = lastname;
+    this.firstname = details.firstname;
+    this.lastname = details.lastname;
   }
 
   get name() {
@@ -10,7 +9,6 @@ export default class User {
   }
 
   userDescription() {
-    return `This is a short description of the user: ${this.name}`
+    return `This is a short description of the user: ${this.name}`;
   }
-
 }

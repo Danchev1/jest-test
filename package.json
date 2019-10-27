@@ -1,7 +1,7 @@
 {
   "name": "jest-test",
   "version": "1.0.0",
-  "description": "Tutorial on jest testing",
+  "description": "Testing with jest",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -19,7 +19,12 @@
   "devDependencies": {
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
-    "jest": "^24.9.0"
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "1.18.2"
   }
 }

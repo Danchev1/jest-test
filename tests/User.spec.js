@@ -19,4 +19,3 @@ describe('User.js', () => {
     expect(userDesc).toMatchSnapshot();
   });
 });
-

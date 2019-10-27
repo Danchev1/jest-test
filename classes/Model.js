@@ -4,8 +4,9 @@ export default class Model {
   }
 
   record(item) {
-    Array.isArray(item) || this.$collection.push(...item);
-    Object.prototype.toString.call(item) === '[object Object]' || this.$collection.push(item);
+    Array.isArray(item) && this.$collection.push(...item);
+    Object.prototype.toString.call(item) === '[object Object]' &&
+      this.$collection.push(item);
   }
 
   getAll() {
@@ -19,12 +20,11 @@ export default class Model {
 
   update(id, newValue) {
     let index = this.$collection.findIndex(item => item.id === id);
-    this.$collection[index].value = newValue;
+    this.$collection[index] = newValue;
   }
 
   delete(id) {
     let index = this.$collection.findIndex(item => item.id === id);
-    this.$collection.slice(0,index);
+    this.$collection.splice(index, 1);
   }
-
 }
