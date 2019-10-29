@@ -4,7 +4,8 @@
   "description": "Testing with jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,14 @@
     "url": "https://github.com/Danchev1/jest-test/issues"
   },
   "homepage": "https://github.com/Danchev1/jest-test#readme",
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
